@@ -9,7 +9,7 @@ module.exports = (mongoose) => {
             otherName: String,
             cuisine: String,
             description: String,
-            ingredient: Array,
+            ingredients: Array,
             instruction: String,
             cookingTime: String,
             serving: Number,

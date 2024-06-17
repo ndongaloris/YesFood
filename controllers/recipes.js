@@ -1,11 +1,11 @@
 const db = require("../models/index");
 const ingredient = require("../models/ingredient");
 const dbModel = db.recipes;
-const objectId = require("mongodb").ObjectId
+const ObjectId = require("mongodb").ObjectId
 
 const getAll = (req, res) =>{
-    dbModel.find().then((recipe) =>{
-        res.send(recipe);
+    dbModel.find().then((data) =>{
+        res.send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the getAll", err);
     })
@@ -15,9 +15,9 @@ const getSingle = (req, res) =>{
     if (!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid contact id to find a contact.');
     }
-    const recipeId = new objectId(req.params.id);
-    dbModel.findOne({_id: recipeId}).then((recipe) =>{
-        res.send(recipe);
+    const recipeId = new ObjectId(req.params.id);
+    dbModel.findOne({_id: recipeId}).then((data) =>{
+        res.send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the getSingle", err);
     })
@@ -37,8 +37,8 @@ const createRecipe = (req, res) =>{
         serving: req.body.serving,
         videoLink: req.body.videoLink,
     })
-    dbModel.save(newDoc).then((ingredient) =>{
-        res.send(recipe);
+    newDoc.save(newDoc).then((data) =>{
+        res.send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the createRecipe", err)
     })
@@ -48,9 +48,9 @@ const deleteRecipe = (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid contact id to find a contact.');
     }
-    const recipeId = new objectId(req.params.id);
-    dbModel.deleteOne({_id: recipeId}).then((recipe) =>{
-        res.send(recipe);
+    const recipeId = new ObjectId(req.params.id);
+    dbModel.deleteOne({_id: recipeId}).then((data) =>{
+        res.send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the deleteRecipe", err)
     })
@@ -60,7 +60,7 @@ const updateRecipe = (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid contact id to find a contact.');
     }
-    const recipeId = new objectId(req.params.id);
+    const recipeId = new ObjectId(req.params.id);
     const newDoc = {}
         if (req.body.congoleseName !== undefined) newDoc.congoleseName = req.body.congoleseName;
         if (req.body.frenchName !== undefined) newDoc.frenchName = req.body.frenchName;
@@ -74,8 +74,8 @@ const updateRecipe = (req, res) => {
         if (req.body.serving !== undefined) newDoc.serving = req.body.serving;
         if (req.body.videoLink !== undefined) newDoc.videoLink = req.body.videoLink;
 
-    dbModel.updateOne({_id: recipeId}, {$set: newDoc}).then((recipe) =>{
-        res.send(recipe);
+    dbModel.updateOne({_id: recipeId}, {$set: newDoc}).then((data) =>{
+        res.send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the updateRecipe", err)
     })
