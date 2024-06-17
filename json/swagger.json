@@ -1,0 +1,344 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Create a new Swagger file and add documentation for each route you see there. There are many ways to do this. Generate a visual UI and living documentation of your swagger.json.\n",
+    "version": "1.0.0",
+    "title": "Documentation to an API"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/recipes/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/recipes/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/recipes/create": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "congoleseName": {
+                  "example": "any"
+                },
+                "frenchName": {
+                  "example": "any"
+                },
+                "englishName": {
+                  "example": "any"
+                },
+                "otherName": {
+                  "example": "any"
+                },
+                "cuisine": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "ingredient": {
+                  "example": "any"
+                },
+                "instruction": {
+                  "example": "any"
+                },
+                "cookingTime": {
+                  "example": "any"
+                },
+                "serving": {
+                  "example": "any"
+                },
+                "videoLink": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/recipes/update/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "congoleseName": {
+                  "example": "any"
+                },
+                "frenchName": {
+                  "example": "any"
+                },
+                "englishName": {
+                  "example": "any"
+                },
+                "otherName": {
+                  "example": "any"
+                },
+                "cuisine": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "recipe": {
+                  "example": "any"
+                },
+                "instruction": {
+                  "example": "any"
+                },
+                "cookingTime": {
+                  "example": "any"
+                },
+                "serving": {
+                  "example": "any"
+                },
+                "videoLink": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/recipes/delete/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/ingredients/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ingredients/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/ingredients/create": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "frenchName": {
+                  "example": "any"
+                },
+                "englishName": {
+                  "example": "any"
+                },
+                "otherName": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "origin": {
+                  "example": "any"
+                },
+                "congoleseName": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ingredients/update/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "congoleseName": {
+                  "example": "any"
+                },
+                "frenchName": {
+                  "example": "any"
+                },
+                "englishName": {
+                  "example": "any"
+                },
+                "otherName": {
+                  "example": "any"
+                },
+                "origin": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/ingredients/delete/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  }
+}
