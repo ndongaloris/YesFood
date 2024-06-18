@@ -5,7 +5,7 @@ const ObjectId = require("mongodb").ObjectId
 
 const getAll = (req, res) =>{
     dbModel.find().then((data) =>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the getAll", err);
     })
@@ -17,7 +17,7 @@ const getSingle = (req, res) =>{
     }
     const recipeId = new ObjectId(req.params.id);
     dbModel.findOne({_id: recipeId}).then((data) =>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the getSingle", err);
     })
@@ -38,7 +38,7 @@ const createRecipe = (req, res) =>{
         videoLink: req.body.videoLink,
     })
     newDoc.save(newDoc).then((data) =>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the createRecipe", err)
     })
@@ -50,7 +50,7 @@ const deleteRecipe = (req, res) => {
     }
     const recipeId = new ObjectId(req.params.id);
     dbModel.deleteOne({_id: recipeId}).then((data) =>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the deleteRecipe", err)
     })
@@ -75,7 +75,7 @@ const updateRecipe = (req, res) => {
         if (req.body.videoLink !== undefined) newDoc.videoLink = req.body.videoLink;
 
     dbModel.updateOne({_id: recipeId}, {$set: newDoc}).then((data) =>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the updateRecipe", err)
     })

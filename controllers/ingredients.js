@@ -4,7 +4,7 @@ const ObjectId = require("mongodb").ObjectId;
 
 const getAll = (req, res) =>{
     dbModel.find().then((data) =>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the getAll", err);
     })
@@ -15,7 +15,7 @@ const getSingle = (req, res) =>{
     }
     const ingredientId = new ObjectId(req.params.id);
     dbModel.findOne({_id: ingredientId}).then((data) =>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the getSingle", err);
     })
@@ -32,7 +32,7 @@ const createIngredient =  (req, res) =>{
     })
     
     newDoc.save(newDoc).then((data) =>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the createIngredient", err)
     })
@@ -44,7 +44,7 @@ const deleteIngredient = (req, res) => {
     }
     const ingredientId = new ObjectId(req.params.id);
     dbModel.deleteOne({_id: ingredientId}).then((data) =>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the de", err)
     })
@@ -64,7 +64,7 @@ const updateIngredient = (req, res) => {
         if (req.body.description !== undefined) newDoc.description = req.body.description;
 
     dbModel.updateOne({_id: ingredientId}, {$set: newDoc}).then((data) =>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err) =>{
         throw Error("something is wrong with the updateIngredient", err)
     })
