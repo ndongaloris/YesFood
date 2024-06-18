@@ -7,7 +7,7 @@ const definition ={
         "version": "1.0.0",
         "title": "Documentation to an API"
     },
-    host: "web-services-apis.onrender.com",
+    host: "yesfood.onrender.com",
     schemes: ["https", "http"],
 }
 
