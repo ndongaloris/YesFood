@@ -13,7 +13,7 @@ const getAll = (req, res) =>{
 }
 const getSingle = (req, res) =>{
     if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json('Must use a valid contact id to find a contact.');
+        res.status(400).json('Must use a valid recipe id to find a recipe.');
     }
     const recipeId = new ObjectId(req.params.id);
     dbModel.findOne({_id: recipeId}).then((data) =>{
@@ -46,7 +46,7 @@ const createRecipe = (req, res) =>{
 
 const deleteRecipe = (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json('Must use a valid contact id to find a contact.');
+        res.status(400).json('Must use a valid recipe id to find a recipe.');
     }
     const recipeId = new ObjectId(req.params.id);
     dbModel.deleteOne({_id: recipeId}).then((data) =>{
@@ -58,7 +58,7 @@ const deleteRecipe = (req, res) => {
 
 const updateRecipe = (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json('Must use a valid contact id to find a contact.');
+        res.status(400).json('Must use a valid recipe id to find a recipe.');
     }
     const recipeId = new ObjectId(req.params.id);
     const newDoc = {}

@@ -10,13 +10,13 @@ const saveRecipe = (req, res, next) => {
         ingredients: "array",
         instruction: "string",
         cookingTime: "string",
-        serving: "number",
-        videoLink: "string",
+        serving: "numeric",
+        videoLink: "url",
         otherName: "string",
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
-            res.status(400).send({
+            res.status(412).send({
                 success: false,
                 message: 'Validation failed',
                 data: err
@@ -36,13 +36,13 @@ const updateRecipe = (req, res, next) => {
         ingredients: "array",
         instruction: "string",
         cookingTime: "string",
-        serving: "number",
-        videoLink: "string",
+        serving: "numeric",
+        videoLink: "url",
         otherName: "string",
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
-            res.status(400).send({
+            res.status(412).send({
                 success: false,
                 message: 'Validation failed',
                 data: err

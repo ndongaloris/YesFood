@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "title": "Documentation to an API"
   },
-  "host": "web-services-apis.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
     "https",
@@ -114,8 +114,8 @@
           "200": {
             "description": "OK"
           },
-          "400": {
-            "description": "Bad Request"
+          "412": {
+            "description": "Precondition Failed"
           }
         }
       }
@@ -179,6 +179,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
           }
         }
       }

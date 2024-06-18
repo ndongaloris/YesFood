@@ -1,3 +1,5 @@
+const { Decimal128 } = require("mongodb");
+
 module.exports = (mongoose) => {
     const Recipe = mongoose.model(
         "recipes", mongoose.Schema({
