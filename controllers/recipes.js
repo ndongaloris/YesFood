@@ -7,7 +7,7 @@ const getAll = (req, res) =>{
     dbModel.find().then((data) =>{
         res.status(200).send(data);
     }).catch((err) =>{
-        throw Error("something is wrong with the getAll", err);
+        console.log("something is wrong with the getAll", err);
     })
     
 }
@@ -19,7 +19,7 @@ const getSingle = (req, res) =>{
     dbModel.findOne({_id: recipeId}).then((data) =>{
         res.status(200).send(data);
     }).catch((err) =>{
-        throw Error("something is wrong with the getSingle", err);
+        console.log("something is wrong with the getSingle", err);
     })
 }
 
@@ -40,7 +40,7 @@ const createRecipe = (req, res) =>{
     newDoc.save(newDoc).then((data) =>{
         res.status(200).send(data);
     }).catch((err) =>{
-        throw Error("something is wrong with the createRecipe", err)
+        console.log("something is wrong with the createRecipe", err)
     })
 }
 
@@ -52,7 +52,7 @@ const deleteRecipe = (req, res) => {
     dbModel.deleteOne({_id: recipeId}).then((data) =>{
         res.status(200).send(data);
     }).catch((err) =>{
-        throw Error("something is wrong with the deleteRecipe", err)
+        console.log("something is wrong with the deleteRecipe", err)
     })
 }
 
@@ -77,7 +77,7 @@ const updateRecipe = (req, res) => {
     dbModel.updateOne({_id: recipeId}, {$set: newDoc}).then((data) =>{
         res.status(200).send(data);
     }).catch((err) =>{
-        throw Error("something is wrong with the updateRecipe", err)
+        console.log("something is wrong with the updateRecipe", err)
     })
 }
 
