@@ -116,7 +116,7 @@ exports.findOne = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Temple.deleteOne({temple: id})
+    Temple.deleteOne({temple_id: id})
         .then((data) => {
         if (!data) {
             res.status(404).send({
