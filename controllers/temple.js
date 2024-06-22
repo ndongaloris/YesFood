@@ -114,9 +114,9 @@ exports.findOne = (req, res) => {
 
 // Delete a Temple with the specified id in the request
 exports.delete = (req, res) => {
-    const id = req.params.id;
+    const id = req.params.temple_id;
 
-    Temple.deleteOne({temple_id: id})
+    Temple.deleteOne({ temple_id: id })
         .then((data) => {
         if (!data) {
             res.status(404).send({
@@ -124,7 +124,7 @@ exports.delete = (req, res) => {
             });
         } else {
             res.send({
-            message: 'Temple was deleted successfully!',
+            message: 'Temple was deleted successfully!', data
             });
         }
         })
