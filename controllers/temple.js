@@ -124,7 +124,7 @@ exports.delete = (req, res) => {
             });
         } else {
             res.send({
-            message: 'Temple was deleted successfully!', data
+            message: 'Temple was deleted successfully!',
             });
         }
         })
